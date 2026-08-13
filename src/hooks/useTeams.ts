@@ -8,10 +8,13 @@ export const useTeams = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let timeout = setTimeout(() => setLoading(false), 5000);
+
     const q = query(collection(db, 'teams'), orderBy('id'));
     const unsubscribe = onSnapshot(
       q,
       (snapshot) => {
+        clearTimeout(timeout);
         const teamList: Team[] = [];
         snapshot.forEach((doc) => {
           teamList.push({ id: doc.id, ...doc.data() } as Team);
@@ -20,12 +23,16 @@ export const useTeams = () => {
         setLoading(false);
       },
       (error) => {
+        clearTimeout(timeout);
         console.error("Error fetching teams:", error);
         setLoading(false);
       }
     );
 
-    return () => unsubscribe();
+    return () => {
+      clearTimeout(timeout);
+      unsubscribe();
+    };
   }, []);
 
   return { teams, loading };

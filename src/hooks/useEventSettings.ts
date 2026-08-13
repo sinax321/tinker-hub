@@ -8,9 +8,12 @@ export const useEventSettings = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let timeout = setTimeout(() => setLoading(false), 5000);
+
     const unsubscribe = onSnapshot(
       doc(db, 'settings', 'event'),
       (doc) => {
+        clearTimeout(timeout);
         if (doc.exists()) {
           setSettings(doc.data() as EventSettings);
         } else {
@@ -19,12 +22,16 @@ export const useEventSettings = () => {
         setLoading(false);
       },
       (error) => {
+        clearTimeout(timeout);
         console.error("Error fetching settings:", error);
         setLoading(false);
       }
     );
 
-    return () => unsubscribe();
+    return () => {
+      clearTimeout(timeout);
+      unsubscribe();
+    };
   }, []);
 
   return { settings, loading };

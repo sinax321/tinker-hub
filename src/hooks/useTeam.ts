@@ -15,9 +15,12 @@ export const useTeam = (teamId: string | null) => {
     }
 
     setLoading(true);
+    let timeout = setTimeout(() => setLoading(false), 5000);
+
     const unsubscribe = onSnapshot(
       doc(db, 'teams', teamId),
       (doc) => {
+        clearTimeout(timeout);
         if (doc.exists()) {
           setTeam({ id: doc.id, ...doc.data() } as Team);
         } else {
@@ -26,12 +29,16 @@ export const useTeam = (teamId: string | null) => {
         setLoading(false);
       },
       (error) => {
+        clearTimeout(timeout);
         console.error("Error fetching team:", error);
         setLoading(false);
       }
     );
 
-    return () => unsubscribe();
+    return () => {
+      clearTimeout(timeout);
+      unsubscribe();
+    };
   }, [teamId]);
 
   return { team, loading };
