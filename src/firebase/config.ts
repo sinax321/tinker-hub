@@ -4,12 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "mock-api-key",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "mock-auth-domain",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "mock-project-id",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "mock-storage-bucket",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "mock-sender-id",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "mock-app-id"
+  apiKey: "AIzaSyCvrMUKZFmWLLo_BkOCj-GGXe-YjcXJVBk",
+  authDomain: "tinker-hub.firebaseapp.com",
+  projectId: "tinker-hub",
+  storageBucket: "tinker-hub.firebasestorage.app",
+  messagingSenderId: "817993831742",
+  appId: "1:817993831742:web:37127e84c0492b02c8c86f",
+  measurementId: "G-TLNEB8GWHC"
 };
 
 // Initialize Firebase
