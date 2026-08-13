@@ -3,26 +3,26 @@ import { db } from '../firebase/config';
 import type { Student, Team } from '../types';
 
 const TEAM_IDENTITIES = [
-  { name: 'Red Dragons', emoji: '🔴', color: '#ef4444' },
-  { name: 'Blue Rockets', emoji: '🔵', color: '#3b82f6' },
-  { name: 'Green Ninjas', emoji: '🟢', color: '#22c55e' },
-  { name: 'Yellow Stars', emoji: '🟡', color: '#eab308' },
-  { name: 'Purple Pixels', emoji: '🟣', color: '#a855f7' },
-  { name: 'Orange Orbit', emoji: '🟠', color: '#f97316' },
-  { name: 'White Wolves', emoji: '⚪', color: '#f8fafc' },
-  { name: 'Black Panthers', emoji: '⚫', color: '#1e293b' },
-  { name: 'Cyan Cybers', emoji: '🟦', color: '#06b6d4' },
-  { name: 'Pink Panthers', emoji: '🌸', color: '#ec4899' },
-  { name: 'Silver Surfers', emoji: '🛸', color: '#94a3b8' },
-  { name: 'Golden Griffins', emoji: '🦅', color: '#fbbf24' },
-  { name: 'Crimson Cobras', emoji: '🐍', color: '#dc2626' },
-  { name: 'Teal Titans', emoji: '🌊', color: '#14b8a6' },
-  { name: 'Indigo Eagles', emoji: '🦅', color: '#4f46e5' },
-  { name: 'Lime Lions', emoji: '🦁', color: '#84cc16' },
-  { name: 'Amber Astronauts', emoji: '🚀', color: '#d97706' },
-  { name: 'Emerald Falcons', emoji: '🦅', color: '#10b981' },
-  { name: 'Rose Rebels', emoji: '🌹', color: '#e11d48' },
-  { name: 'Sky Spartans', emoji: '⚔️', color: '#0ea5e9' }
+  { name: 'Red', emoji: '🔴', color: '#ef4444' },
+  { name: 'Blue', emoji: '🔵', color: '#3b82f6' },
+  { name: 'Green', emoji: '🟢', color: '#22c55e' },
+  { name: 'Yellow', emoji: '🟡', color: '#eab308' },
+  { name: 'Purple', emoji: '🟣', color: '#a855f7' },
+  { name: 'Orange', emoji: '🟠', color: '#f97316' },
+  { name: 'White', emoji: '⚪', color: '#f8fafc' },
+  { name: 'Black', emoji: '⚫', color: '#1e293b' },
+  { name: 'Cyan', emoji: '🟦', color: '#06b6d4' },
+  { name: 'Pink', emoji: '🌸', color: '#ec4899' },
+  { name: 'Silver', emoji: '⚪', color: '#94a3b8' },
+  { name: 'Gold', emoji: '🟡', color: '#fbbf24' },
+  { name: 'Crimson', emoji: '🔴', color: '#dc2626' },
+  { name: 'Teal', emoji: '🟢', color: '#14b8a6' },
+  { name: 'Indigo', emoji: '🟣', color: '#4f46e5' },
+  { name: 'Lime', emoji: '🟢', color: '#84cc16' },
+  { name: 'Amber', emoji: '🟠', color: '#d97706' },
+  { name: 'Emerald', emoji: '🟢', color: '#10b981' },
+  { name: 'Rose', emoji: '🔴', color: '#e11d48' },
+  { name: 'Sky Blue', emoji: '🔵', color: '#0ea5e9' }
 ];
 
 export const generateTeams = async (students: Student[], numberOfTeams: number) => {
