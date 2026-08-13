@@ -37,18 +37,18 @@ export const AdminDashboard: React.FC = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex h-screen items-center justify-center bg-slate-50 p-4">
+      <div className="flex h-screen items-center justify-center bg-slate-50 p-4 text-slate-900">
         <form onSubmit={handleLogin} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 w-full max-w-sm">
           <h2 className="text-2xl font-bold mb-6 text-center text-slate-800">Admin Login</h2>
           {loginError && <div className="text-red-500 mb-4 text-sm text-center">{loginError}</div>}
           <div className="space-y-4">
             <input 
               type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}
-              className="w-full p-3 rounded-xl border border-slate-300 focus:ring-1 focus:ring-primary outline-none" 
+              className="w-full p-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 focus:ring-1 focus:ring-primary outline-none" 
             />
             <input 
               type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}
-              className="w-full p-3 rounded-xl border border-slate-300 focus:ring-1 focus:ring-primary outline-none" 
+              className="w-full p-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 focus:ring-1 focus:ring-primary outline-none" 
             />
             <button type="submit" className="w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-violet-600 transition-colors">
               Login
