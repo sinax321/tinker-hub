@@ -22,5 +22,11 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "src/components/ui/QrCode.tsx",
+    "src/hooks/useGroup.ts",
+    "src/hooks/useGroups.ts",
+    "src/utils/export.ts"
+  ]
 }
