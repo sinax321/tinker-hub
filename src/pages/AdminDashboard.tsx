@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { doc, updateDoc, deleteDoc, setDoc } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { useStudents } from '../hooks/useStudents';
 import { useTeams } from '../hooks/useTeams';
@@ -77,8 +77,8 @@ export const AdminDashboard: React.FC = () => {
   );
 
   const handleToggleRegistration = async () => {
-    if (!settings) return;
-    await updateDoc(doc(db, 'settings', 'event'), { registrationOpen: !settings.registrationOpen });
+    const isOpen = settings?.registrationOpen || false;
+    await setDoc(doc(db, 'settings', 'event'), { registrationOpen: !isOpen }, { merge: true });
   };
 
   const handleCreateTeams = async () => {

@@ -79,10 +79,10 @@ export const generateTeams = async (students: Student[], numberOfTeams: number) 
 
   // Update Event Settings
   const settingsRef = doc(db, 'settings', 'event');
-  batch.update(settingsRef, {
+  batch.set(settingsRef, {
     teamsCreated: true,
     numberOfTeams: numberOfTeams
-  });
+  }, { merge: true });
 
   await batch.commit();
 };
@@ -104,10 +104,10 @@ export const resetTeams = async (students: Student[], oldTeams: Team[]) => {
 
   // Update Event Settings
   const settingsRef = doc(db, 'settings', 'event');
-  batch.update(settingsRef, {
+  batch.set(settingsRef, {
     teamsCreated: false,
     numberOfTeams: 0
-  });
+  }, { merge: true });
 
   await batch.commit();
 };
