@@ -6,6 +6,7 @@ import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyCvrMUKZFmWLLo_BkOCj-GGXe-YjcXJVBk",
   authDomain: "tinker-hub.firebaseapp.com",
+  databaseURL: "https://tinker-hub-default-rtdb.firebaseio.com",
   projectId: "tinker-hub",
   storageBucket: "tinker-hub.firebasestorage.app",
   messagingSenderId: "817993831742",
